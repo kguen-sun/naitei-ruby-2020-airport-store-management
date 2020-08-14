@@ -27,6 +27,11 @@
   <!-- Right navbar links -->
   <ul class="navbar-nav ml-auto">
     <!-- Notifications Dropdown Menu -->
+    <% unless logged_in? %>
+    <%= link_to login_path, class: "btn btn-block btn-secondary", id: "login-button" do %>
+      <%= t ".login" %>
+    <% end %>
+    <% end %>
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
         <i class="far fa-bell"></i>
@@ -59,11 +64,10 @@
         <% if logged_in? %>
           <div class="dropdown-divider"></div>
           <%= link_to logout_path, class: "dropdown-item dropdown-footer" do %>
-            <i class="fas fa-angle-right"></i>
+            <i class="fas fa-sign-out-alt"></i>
             <%= t ".logout" %>
           <% end %>
-        <%end%>
-        
+        <% end %>
         <div class="dropdown-divider"></div>
         <div class="dropdown-item dropdown-footer">
           <%= t ".languages" %>:

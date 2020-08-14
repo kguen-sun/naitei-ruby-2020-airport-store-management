@@ -1,7 +1,4 @@
 en:
-  hello: Hello world
-  test: Test
-  home: Home
   layouts:
     footer:
       version: Version
@@ -17,7 +14,7 @@ en:
       languages: Languages
       settings: Settings
       logout: Logout
-      
+      login: Login
     sidebar:
       airport_store: Airport Store
       contracts: Contracts
@@ -32,6 +29,12 @@ en:
     error_messages:
       alert: "The form contains"
       alert_error: "error"
+  static_pages:
+    home:
+      title: "Home"
+      welcome: "Welcome to the Airport Store Management System!"
+      home_breadcrumb: "Home"
+      welcome_breadcrumb: "Welcome"
   users:
     new:
       title: "Sign up"

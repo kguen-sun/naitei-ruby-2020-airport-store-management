@@ -1,7 +1,4 @@
 vi:
-  hello: Xin chào
-  test: Test
-  home: Trang chủ
   layouts:
     footer:
       version: Phiên bản
@@ -17,13 +14,14 @@ vi:
       languages: Ngôn ngữ
       settings: Cài đặt
       logout: Đăng xuất
+      login: Đăng nhập
     sidebar:
       contracts: Hợp đồng
       slots: Khu vực
       airport_store: Quản lý cửa hàng
       my_stores: Cửa hàng của tôi
       requests: Yêu cầu
-      terminals: Sảnh
+      terminals: Sảnh bay
       references: Tham khảo
     application:
       store_management: Quản lý cửa hàng
@@ -31,6 +29,12 @@ vi:
     error_messages:
       alert: "Form chứa"
       alert_error: "lỗi"
+  static_pages:
+    home:
+      title: "Trang chủ"
+      welcome: "Chào mừng đến với hệ thống quản lý cửa hàng sân bay!"
+      home_breadcrumb: "Trang chủ"
+      welcome_breadcrumb: "Chào mừng"
   users:
     new:
       title: "Đăng ký"
