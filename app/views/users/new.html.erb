@@ -1,23 +1,96 @@
-<% provide :title, "Sign_up" %>
-<h1>SIGN_UP</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= f.label :name, "Name" %>
-      <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :email, "Email" %>
-      <%= f.email_field :email, class: "form-control" %>
-      <%= f.label :password, "Password" %>
-      <%= f.password_field :password, class: "form-control" %>
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
-      <%= f.label :company_name, "Conpany name" %>
-      <%= f.text_field :company_name, class: "form-control" %>
-      <%= f.label :identity_number, "Identity number" %>
-      <%= f.text_field :identity_number, class: "form-control" %>
-      <%= f.label :phone_number, "Phone number" %>
-      <%= f.text_field :phone_number, class: "form-control" %>
-      <%= f.submit "Create", class: "btn btn-primary" %>
-    <% end %>
+<% provide :title, t(".title") %>
+<body class="hold-transition register-page">
+  <div class="register-box">
+    <div class="register-logo">
+      <b><%= t ".title" %></b>
+      <div class="dropdown-footer">
+        <%= t ".languages" %>:
+        <%= link_to locale: "en" do %>
+          <span class="flag-icon flag-icon-us"></span>
+        <% end %>
+        <%= link_to locale: "vi" do %>
+          <span class="flag-icon flag-icon-vn"> </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body register-card-body">
+        <p class="login-box-msg"><%= t ".register" %></p>
+        <%= form_for(@user) do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="input-group mb-3">
+            <%= f.text_field :name, class: "form-control", placeholder: t(".full_name") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.email_field :email, class: "form-control", placeholder: t(".email") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.password_field :password, class: "form-control", placeholder: t(".password") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.password_field :password_confirmation, class: "form-control", placeholder: t(".retype_password") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.text_field :company_name, class: "form-control", placeholder: t(".company_name") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-building"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.text_field :identity_number, class: "form-control", placeholder: t(".identity_number") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-address-card"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.text_field :phone_number, class: "form-control", placeholder: t(".phone_number") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-phone"></span>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <%= f.submit t(".submit"), class: "btn btn-block btn-primary" %>
+          </div>
+        <% end %>
+        <div class="social-auth-links text-center">
+          <p><%= t ".or" %></p>
+          <%= link_to "#", class: "btn btn-block btn-primary" do %>
+            <i class="fab fa-facebook mr-2"></i>
+            <%= t ".facebook_signup" %>
+          <% end %>
+          <%= link_to "#", class: "btn btn-block btn-danger" do %>
+            <i class="fab fa-google mr-2"></i>
+            <%= t ".google_signup" %>
+          <% end %>
+        </div>
+        <%= link_to t(".had_membership"), login_path, class: "text-center" %>
+      </div>
+    </div>
   </div>
-</div>
+</body>

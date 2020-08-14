@@ -1,2 +1,70 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<% provide :title, t(".title") %>
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <b><%= t ".title" %></b>
+      <div class="dropdown-footer">
+        <%= t ".languages" %>:
+        <%= link_to locale: "en" do %>
+          <span class="flag-icon flag-icon-us"></span>
+        <% end %>
+        <%= link_to locale: "vi" do %>
+          <span class="flag-icon flag-icon-vn"> </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg"><%= t(".sign_in") %></p>
+        <%= form_for :session, url: login_path do |f| %>
+          <div class="input-group mb-3">
+            <%= f.email_field :email, class: "form-control", placeholder: t(".email") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <%= f.password_field :password, class: "form-control", placeholder: t(".password") %>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                  <%= f.check_box :remember_me, id: "remember" %>
+                  <span><%= t ".remember_me" %></span>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-4">
+              <%= f.submit t(".submit"), class: "btn btn-primary btn-block" %>
+            </div>
+          </div>
+        <% end %>
+        <div class="social-auth-links text-center mb-3">
+          <p><%= t ".or" %></p>
+          <%= link_to "#", class: "btn btn-block btn-primary" do %>
+            <i class="fab fa-facebook mr-2"></i>
+            <%= t ".facebook_signup" %>
+          <% end %>
+          <%= link_to "#", class: "btn btn-block btn-danger" do %>
+            <i class="fab fa-google mr-2"></i>
+            <%= t ".google_signup" %>
+          <% end %>
+        </div>
+        <p class="mb-1">
+          <%= link_to t(".forgot_password"), "#" %>
+        </p>
+        <p class="mb-0">
+          <%= link_to t(".register"), signup_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>

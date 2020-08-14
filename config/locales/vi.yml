@@ -21,3 +21,40 @@ vi:
       slots: Khu vực
     application:
       store_management: Quản lý cửa hàng
+  shared:
+    error_messages:
+      alert: "Form chứa"
+      alert_error: "lỗi"
+  users:
+    new:
+      title: "Đăng ký"
+      register: "Đăng ký thành viên mới"
+      full_name: "Họ và tên"
+      email: "Email"
+      password: "Mật khẩu"
+      retype_password: "Gõ lại mật khẩu"
+      company_name: "Tên công ty"
+      identity_number: "Số CMND"
+      phone_number: "Số điện thoại"
+      submit: "Đăng ký"
+      or: "- HOẶC -"
+      facebook_signup: "Đăng ký bằng Facebook"
+      google_signup: "Đăng ký bằng Gmail"
+      had_membership: "Đã có tài khoản?"
+    create:
+      sign_up_success: "Đăng ký thành công!"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      sign_in: "Đăng nhập để bắt đầu phiên của bạn"
+      email: "Email"
+      password: "Mật khẩu"
+      remember_me: "Nhớ phiên đăng nhập"
+      submit: "Đăng nhập"
+      or: "- HOẶC -"
+      facebook_signup: "Đăng nhập bằng Facebook"
+      google_signup: "Đăng nhập bằng Gmail"
+      forgot_password: "Quên mật khẩu?"
+      register: "Đăng ký thành viên mới"
+    create:
+      invalid_login: "Email hoặc mật khẩu không hợp lệ."

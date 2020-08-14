@@ -1,4 +1,16 @@
 @import 'bootstrap/scss/bootstrap';
-
 @import './libs/adminlte.scss';
 @import './libs/all.css';
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+  }
+}
+
+.checkbox {
+  span {
+    margin-left: 2px;
+  }
+}

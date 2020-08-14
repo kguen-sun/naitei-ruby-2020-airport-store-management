@@ -1,39 +1,28 @@
 class User < ApplicationRecord
-  VALID_EMAIL_REGEX = Settings.validations.user.email.regex
-  USERS_PARAMS = %i(name email password password_confirmation).freeze
+  PERMITTED_PARAMS = %i(name email company_name identity_number phone_number
+                        password password_confirmation).freeze
+
   validates :name, presence: true,
-    length: {maximum: Settings.validations.user.name.max_length}
+            length: {maximum: Settings.validations.user.name.max_length}
   validates :email, presence: true,
-    length: {maximum: Settings.validations.user.email.max_length},
-    format: {with: VALID_EMAIL_REGEX},
-    uniqueness: {case_sensitive: false}
+            length: {maximum: Settings.validations.user.email.max_length},
+            format: {with: Settings.validations.user.email.regex},
+            uniqueness: {case_sensitive: false}
   validates :password, presence: true,
-            length: {maximum: Settings.validations.user.password.min_length}
-  validates :company_name, presence: true
-  validates :identity_number, presence: true
-  validates :phone_number, presence: true
-    
+            length: {minimum: Settings.validations.user.password.min_length}
+  validates :company_name, presence: true,
+            length: {maximum: Settings.validations.user.company_name.max_length}
+  validates :identity_number, presence: true,
+            length: {
+              minimum: Settings.validations.user.identity_number.min_length,
+              maximum: Settings.validations.user.identity_number.max_length
+            }
+  validates :phone_number, presence: true,
+            format: {with: Settings.validations.user.phone_number.regex}
+
   before_save :downcase_email
-  
-  
+
   has_secure_password
-
-  class << self
-    def digest string
-      cost =
-        if ActiveModel::SecurePassword.min_cost
-          BCrypt::Engine::MIN_COST
-        else
-          BCrypt::Engine.cost
-        end
-      BCrypt::Password.create string, cost: cost
-    end
-
-    def new_token
-      SecureRandom.urlsafe_base64
-    end
-  end
-  
 
   private
   def downcase_email
