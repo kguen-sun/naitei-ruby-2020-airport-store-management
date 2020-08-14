@@ -16,9 +16,16 @@ en:
       profile: Profile
       languages: Languages
       settings: Settings
+      logout: Logout
+      
     sidebar:
+      airport_store: Airport Store
       contracts: Contracts
       slots: Slots
+      my_stores: My Stores
+      requests: Request
+      terminals: Terminals
+      references: References
     application:
       store_management: Store Management
   shared:

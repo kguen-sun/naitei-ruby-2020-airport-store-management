@@ -56,7 +56,14 @@
           <i class="fas fa-user"></i>
           <%= t ".profile" %>
         </a>
-
+        <% if logged_in? %>
+          <div class="dropdown-divider"></div>
+          <%= link_to logout_path, class: "dropdown-item dropdown-footer" do %>
+            <i class="fas fa-angle-right"></i>
+            <%= t ".logout" %>
+          <% end %>
+        <%end%>
+        
         <div class="dropdown-divider"></div>
         <div class="dropdown-item dropdown-footer">
           <%= t ".languages" %>:

@@ -16,9 +16,15 @@ vi:
       profile: Hồ sơ
       languages: Ngôn ngữ
       settings: Cài đặt
+      logout: Đăng xuất
     sidebar:
       contracts: Hợp đồng
       slots: Khu vực
+      airport_store: Quản lý cửa hàng
+      my_stores: Cửa hàng của tôi
+      requests: Yêu cầu
+      terminals: Sảnh
+      references: Tham khảo
     application:
       store_management: Quản lý cửa hàng
   shared:
