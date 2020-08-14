@@ -8,6 +8,8 @@ gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
 gem "webpacker", "~> 4.0"
+gem "bcrypt"
+gem "config"
 
 group :development do
   gem "irb", require: false

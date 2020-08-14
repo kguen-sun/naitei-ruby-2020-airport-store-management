@@ -1,0 +1,23 @@
+<% provide :title, "Sign_up" %>
+<h1>SIGN_UP</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :email, "Email" %>
+      <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= f.label :company_name, "Conpany name" %>
+      <%= f.text_field :company_name, class: "form-control" %>
+      <%= f.label :identity_number, "Identity number" %>
+      <%= f.text_field :identity_number, class: "form-control" %>
+      <%= f.label :phone_number, "Phone number" %>
+      <%= f.text_field :phone_number, class: "form-control" %>
+      <%= f.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
