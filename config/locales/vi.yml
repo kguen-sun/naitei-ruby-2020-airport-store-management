@@ -8,6 +8,7 @@ vi:
       contact: Liên hệ
       search: Tìm kiếm
       notifications: Thông báo
+      minutes: phút trước
       messages: tin nhắn
       see_all_notifications: Xem tất cả thông báo
       profile: Hồ sơ
@@ -35,6 +36,11 @@ vi:
       welcome: "Chào mừng đến với hệ thống quản lý cửa hàng sân bay!"
       home_breadcrumb: "Trang chủ"
       welcome_breadcrumb: "Chào mừng"
+      view_more: "Xem thêm..."
+      airport_name: "Sân bay Nội bài"
+      content_html: |
+        Sân bay Quốc tế Nội Bài,<br>
+        sân bay lớn nhất miền bắc Việt Nam, phục vụ thủ đô Hà Nội.
   users:
     new:
       title: "Đăng ký"

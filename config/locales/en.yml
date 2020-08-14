@@ -8,6 +8,7 @@ en:
       contact: Contact
       search: Search
       notifications: Notifications
+      minutes: mins ago
       messages: messages
       see_all_notifications: See All Notifications
       profile: Profile
@@ -35,6 +36,11 @@ en:
       welcome: "Welcome to the Airport Store Management System!"
       home_breadcrumb: "Home"
       welcome_breadcrumb: "Welcome"
+      airport_name: "Noi Bai airport"
+      view_more: "View more..."
+      content_html  : |
+        Noi Bai International Airport,<br>
+        the biggest airport in northern Vietnam, serves the capital city of Hanoi.
   users:
     new:
       title: "Sign up"

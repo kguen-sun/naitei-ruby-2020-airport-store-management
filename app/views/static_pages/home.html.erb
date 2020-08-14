@@ -15,24 +15,16 @@
   </div>
 </div>
 <div class="content" ></div>
-  <div class="container-fluid" id="home-content" >
+  <div class="container-fluid" id="home-content">
     <div class="row" id="home-content-row">
       <div class="col-lg-6">
-        <div>
-          <div>
-            <h5>Noi Bai airport</h5>
-            <p class="overview">
-            Noi Bai International Airport (IATA: HAN, ICAO: VVNB),
-            <br>the biggest airport in northern Vietnam, serves the capital city of Hanoi. 
-            </p>
-            <a href="https://www.hanoiairportonline.com/" target="_blank" class="card-link" id="view-more">View more... </a>
-          </div>
-        </div>
+        <h5><%= t ".airport_name" %></h5>
+        <p class="overview"><%= t ".content_html" %></p>
+        <%= link_to t(".view_more"), Settings.links.airport, id: "view-more", target: "_blank" %>
       </div>
       <div class="col-lg-6">
-          <img id="attentdant" class="img-circle" src="../../images/flight-attendant.png" alt="User Image">
+        <img id="attentdant" class="img-circle" src="../../images/flight-attendant.png" alt="User Image">
       </div>
-      
     </div>
   </div>
 </div>

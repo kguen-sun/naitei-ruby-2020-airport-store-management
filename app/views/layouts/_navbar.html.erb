@@ -28,9 +28,11 @@
   <ul class="navbar-nav ml-auto">
     <!-- Notifications Dropdown Menu -->
     <% unless logged_in? %>
-    <%= link_to login_path, class: "btn btn-block btn-secondary", id: "login-button" do %>
-      <%= t ".login" %>
-    <% end %>
+      <li class="nav-item d-none d-sm-inline-block">
+        <%= link_to login_path, class: "nav-link" do %>
+          <%= t ".login" %>
+        <% end %>
+      </li>
     <% end %>
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
@@ -42,7 +44,7 @@
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
           <i class="fas fa-envelope mr-2"></i> 4 <%= t ".messages" %>
-          <span class="float-right text-muted text-sm">3 mins</span>
+          <span class="float-right text-muted text-sm">3 <%= t ".minutes" %></span>
         </a>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer"><%= t ".see_all_notifications" %></a>
@@ -55,7 +57,6 @@
         <i class="fas fa-ellipsis-v"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer">
           <i class="fas fa-user"></i>
@@ -63,7 +64,7 @@
         </a>
         <% if logged_in? %>
           <div class="dropdown-divider"></div>
-          <%= link_to logout_path, class: "dropdown-item dropdown-footer" do %>
+          <%= link_to logout_path, method: :delete, class: "dropdown-item dropdown-footer" do %>
             <i class="fas fa-sign-out-alt"></i>
             <%= t ".logout" %>
           <% end %>
